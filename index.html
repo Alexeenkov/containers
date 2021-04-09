@@ -17,13 +17,13 @@
             </a>
             <ul class="header__menu">
                 <li class="header__item">
-                    <a href="#0" class="header__link">Почему стоит арендовать</a>
+                    <a href="#why" class="header__link">Почему стоит арендовать</a>
                 </li>
                 <li class="header__item">
-                    <a href="#0" class="header__link">Доставка</a>
+                    <a href="#delivery" class="header__link">Доставка</a>
                 </li>
                 <li class="header__item">
-                    <a href="#0" class="header__link">Стоимость аренды</a>
+                    <a href="#lease" class="header__link">Стоимость аренды</a>
                 </li>
             </ul>
             <select name="" id="" class="header__city">
@@ -35,7 +35,8 @@
 				<option value="Иваново">г. Иваново</option>
 			</select>
             <div class="header__contacts">
-                <a href="tel:+79218338888" class="header__tel">+7-921-833-8888</a>
+                <a href="mailto:rosrenta@yandex.ru" class="footer__email"><span>E-mail:</span> rosrenta@yandex.ru</a>
+                <a href="tel:+79218338888" class="header__tel"><span>Тел:</span> +7-921-833-8888</a>
             </div>
         </div>
     </header>
@@ -52,9 +53,9 @@
                 <li class="main__item">электрофицированна 2.5 квт</li>
                 <li class="main__item">двойной стеклопакет</li>
             </ul>
-            <button type="button" id="btn" class="main__button button">Обратный звонок</button>
+            <a href="#popup" class="main__button button popup-link">Обратный звонок</a>
         </div>
-        <div class="why">
+        <div class="why" id="why">
             <div class="wrapper">
                 <h2 class="why__title title">Почему стоит арендовать</h2>
                 <div class="why__subtitle">Аренда строительных бытовок позволит вам в кратчашие сроки организовать:</div>
@@ -96,13 +97,13 @@
                 </div>
             </div>
         </div>
-        <div class="delivery">
+        <div class="delivery" id="delivery">
             <div class="wrapper">
                 <h2 class="delivery__title title">Доставка</h2>
                 <div class="delivery__container">
                     <div class="delivery__content">
                         <div class="delivery__text">Доставка и вывоз осуществляется собственным автопарком манипуляторов как по городу так и по области</div>
-                        <button class="delivery__button button">Обратный звонок</button>
+                        <a href="#popup" class="delivery__button button popup-link">Обратный звонок</a>
                     </div>
                     <div class="delivery__image">
                         <img src="img/auto.png" alt="Доставка манипулятором">
@@ -110,7 +111,7 @@
                 </div>
             </div>
         </div>
-        <div class="lease">
+        <div class="lease" id="lease">
             <div class="wrapper">
                 <h2 class="lease__title title">Стоимость аренды</h2>
                 <ul class="lease__circuit">
@@ -144,10 +145,10 @@
                 <img src="svg/logo-white.svg" alt="Логотип Рос Аренда">
             </a>
             <div class="footer__container">
-                <button type="button" id="btn" class="button footer__button">Обратный звонок</button>
+                <a href="#popup" class="button footer__button popup-link">Обратный звонок</a>
                 <div class="footer__contacts">
-                    <a href="mailto:rosrenta@yandex.ru" class="footer__email">rosrenta@yandex.ru</a>
-                    <a href="tel:+79218338888" class="footer__tel">+7-921-833-8888</a>
+                    <a href="mailto:rosrenta@yandex.ru" class="footer__email"><span>E-mail:</span> rosrenta@yandex.ru</a>
+                    <a href="tel:+79218338888" class="footer__tel"><span>Тел:</span> +7-921-833-8888</a>
                 </div>
             </div>
         </div>
@@ -166,12 +167,26 @@
             </ul>
         </div>
     </footer>
+    <aside class="popup" id="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <button type="button" class="popup__close">
+					<span class="visually-hidden">Крестик - закрывает форму (модальное окно) при нажатии</span>
+				</button>
+                <h4 class="popup__title">Напишите свое имя и телефон и мы Вам перезвоним</h4>
+                <form action="php/sendmail.php" method="POST" class="popup__form">
+                    <input type="text" name="name" class="popup__input popup__name" placeholder="Ваше имя" required>
+                    <input type="tel" name="tel" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" class="popup__input popup__tel" placeholder="+7(___)___-__-__" required>
+                    <button type="submit" class="button popup__button">Обратный звонок</button>
+                </form>
+            </div>
+        </div>
+    </aside>
 
 
 
 
-
-    <script src="js/script.js "></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
